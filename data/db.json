@@ -1,0 +1,13 @@
+{
+    "transactions": [
+        { "id": 1, "person": "Jel Chibuzo", "projects": 578, "finished": 357, "profit": 390.99, "followers": 189 },
+        { "id": 2, "person": "Nahia Colunga", "projects": 32, "finished": 241, "profit": 23.50, "followers": 1034 },
+        { "id": 3, "person": "Wen Yahui", "projects": 1980, "finished": 34, "profit": 788.00, "followers": 810 },
+        { "id": 4, "person": "Elsi Hansdottir", "projects": 510, "finished": 5601, "profit": 613.65, "followers": 93 }
+    ],
+    "creditcards": [
+        { "id": 1, "bankname": "Musterbank", "cardowner": "Henry Richardson", "cardnumber": "4567 **** **** 4501", "expdate": "04 / 23" },
+        { "id": 2, "bankname": "Musterbank", "cardowner": "Henry Richardson", "cardnumber": "4567 **** **** 4501", "expdate": "04 / 23" },
+        { "id": 3, "bankname": "Musterbank", "cardowner": "Henry Richardson", "cardnumber": "4567 **** **** 4501", "expdate": "04 / 23" }
+    ]
+}
