@@ -1,5 +1,5 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png">
+    <sidebar/>
     
     <div v-if="transactions.length">
         <div v-for="transaction in transactions" :key="transaction.id">
@@ -15,6 +15,7 @@
 
 import loader from './components/loader.vue';
 import transaction from './components/transaction.vue';
+import sidebar from './components/sidebar.vue';
 
 export default {
     name: 'App',
@@ -25,7 +26,8 @@ export default {
     },
     components: {
         loader,
-        transaction
+        transaction,
+        sidebar
     },
     methods: {
         async getTransactionDetails(transactionId) {
@@ -45,6 +47,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
