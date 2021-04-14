@@ -1,9 +1,9 @@
 <template>
     <div class="transaction">
         <div class="person">
-            <img src="../assets/icons/Elements/User/Photo.svg" alt="person">
+            <img v-bind:src="getImgUrl(person.icon)" alt="person">
             <div class="person-info">
-                <h2 class="person-name">{{ person }}</h2>
+                <h2 class="person-name">{{ person.name }}</h2>
                 <h4 class="person-nick">Lima</h4>
             </div>
         </div>
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+
 export default {
     props: [
         'person',
@@ -35,8 +36,14 @@ export default {
         'finished',
         'profit',
         'followers'
-    ]
+    ],
+    methods: {
+        getImgUrl(pic) {
+            return require('../assets/icons/Elements/User/'+pic)
+        }
+    }
 }
+
 </script>
 
 <style scoped>
@@ -75,5 +82,9 @@ export default {
 
 .person-nick {
     color: rgba(0, 0, 0, .4);
+}
+
+.purple {
+    color: blueviolet;
 }
 </style>
