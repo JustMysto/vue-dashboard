@@ -85,6 +85,6 @@ export default {
 }
 
 .purple {
-    color: blueviolet;
+    color: var(--purple);
 }
 </style>

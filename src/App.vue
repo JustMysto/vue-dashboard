@@ -1,16 +1,17 @@
 <template>
     <sidebar/>
-    
-    <div v-if="transactions.length">
-        <div v-for="transaction in transactions" :key="transaction.id">
-            <transaction v-on:click="getTransactionDetails(transaction.id)" :person="transaction.person" :projects="transaction.projects" :finished="transaction.finished" :profit="transaction.profit" :followers="transaction.followers"/>
+    <section class="dashboard">
+        <div v-if="transactions.length">
+            <div v-for="transaction in transactions" :key="transaction.id">
+                <transaction v-on:click="getTransactionDetails(transaction.id)" :person="transaction.person" :projects="transaction.projects" :finished="transaction.finished" :profit="transaction.profit" :followers="transaction.followers"/>
+            </div>
         </div>
-    </div>
-    <div v-else>
-        <loader/>
-    </div>
+        <div v-else>
+            <loader/>
+        </div>
+    </section>
 </template>
-
+    
 <script>
 
 import loader from './components/loader.vue';
@@ -48,5 +49,10 @@ export default {
 </script>
 
 <style scoped>
+
+.dashboard {
+    width: 100%;
+    margin: 5rem 10rem 5rem 10rem;
+}
 
 </style>

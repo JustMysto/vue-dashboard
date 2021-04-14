@@ -73,3 +73,8 @@ p {
     font-weight: normal;
     src: url('fonts/DMSans-Bold.woff') format('woff');
 }
+
+#app {
+    display: flex;
+    background-color: #F8F8F8;
+}
