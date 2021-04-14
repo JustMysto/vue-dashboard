@@ -1,11 +1,11 @@
 <template>
     <sidebar/>
-    <section class="dashboard">
-        <div v-if="transactions.length">
-            <div v-for="transaction in transactions" :key="transaction.id">
+    <section class="dashboard row">
+        <template v-if="transactions.length">
+            <template v-for="transaction in transactions" :key="transaction.id">
                 <transaction v-on:click="getTransactionDetails(transaction.id)" :person="transaction.person" :projects="transaction.projects" :finished="transaction.finished" :profit="transaction.profit" :followers="transaction.followers"/>
-            </div>
-        </div>
+            </template>
+        </template>
         <div v-else>
             <loader/>
         </div>

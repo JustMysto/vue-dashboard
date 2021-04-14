@@ -78,3 +78,9 @@ p {
     display: flex;
     background-color: #F8F8F8;
 }
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5rem;
+}
