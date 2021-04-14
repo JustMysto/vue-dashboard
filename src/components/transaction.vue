@@ -47,44 +47,54 @@ export default {
 </script>
 
 <style scoped>
-.transaction {
-    grid-column: span 9;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    border-radius: 1rem;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 0.2fr;
-    cursor: pointer;
-    box-shadow: 0px 5px 15px -15px black;
-    animation: fadeIn .2s ease-out;
-    transition: background-color .2s;
-}
+    .transaction {
+        grid-column: span 9;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        border-radius: 1rem;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 0.2fr;
+        cursor: pointer;
+        box-shadow: 0px 5px 15px -15px black;
+        animation: fadeIn .2s ease-out;
+        transition: background-color .2s;
+    }
 
-.transaction:hover {
-    background-color: #F8F8F8;
-}
+    .transaction:hover {
+        background-color: #F8F8F8;
+    }
 
-.person {
-    display: flex;
-    align-items: center;
-    grid-column: 1;
-}
+    .person {
+        display: flex;
+        align-items: center;
+        grid-column: 1;
+    }
 
-.person-info {
-    margin: 0 0 0 1.5rem;
-}
+    .person-info {
+        margin: 0 0 0 1.5rem;
+    }
 
-.transaction-info-text {
-    color: rgba(0, 0, 0, .4);
-}
+    .transaction-info-text {
+        color: rgba(0, 0, 0, .4);
+    }
 
-.person-nick {
-    color: rgba(0, 0, 0, .4);
-}
+    .person-nick {
+        color: rgba(0, 0, 0, .4);
+    }
 
-.purple {
-    color: var(--purple);
-}
+    .purple {
+        color: var(--purple);
+    }
+
+    @keyframes fadeIn {
+        0% { transform: scale(0) };
+        100% { transform: scale(1) };
+    }
+
+    @keyframes hover {
+        0% { transform: rotate(0deg) ;}
+        100% { transform: rotate(360deg) ;} 
+    }
 </style>
