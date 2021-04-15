@@ -13,6 +13,26 @@
     --yellow: #FFB200;
 }
 
+.bg-red {
+    background-color: var(--red);
+}
+
+.bg-purple {
+    background-color: var(--purple);
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.bg-lightblue {
+    background-color: var(--lightblue);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
 ul {
     list-style-type: none;
 }

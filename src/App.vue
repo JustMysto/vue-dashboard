@@ -1,6 +1,7 @@
 <template>
     <sidebar/>
     <section class="dashboard row">
+        <card/>
         <template v-if="transactions.length">
             <template v-for="transaction in transactions" :key="transaction.id">
                 <transaction v-on:click="getTransactionDetails(transaction.id)" :person="transaction.person" :projects="transaction.projects" :finished="transaction.finished" :profit="transaction.profit" :followers="transaction.followers"/>
@@ -17,6 +18,7 @@
 import loader from './components/loader.vue';
 import transaction from './components/transaction.vue';
 import sidebar from './components/sidebar.vue';
+import card from './components/card.vue';
 
 export default {
     name: 'App',
@@ -28,7 +30,8 @@ export default {
     components: {
         loader,
         transaction,
-        sidebar
+        sidebar,
+        card
     },
     methods: {
         async getTransactionDetails(transactionId) {
