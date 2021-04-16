@@ -2,23 +2,15 @@
     <sidebar/>
     <section class="dashboard row">
         <card/>
-        <template v-if="transactions.length">
-            <template v-for="transaction in transactions" :key="transaction.id">
-                <transaction v-on:click="getTransactionDetails(transaction.id)" :person="transaction.person" :projects="transaction.projects" :finished="transaction.finished" :profit="transaction.profit" :followers="transaction.followers"/>
-            </template>
-        </template>
-        <div v-else>
-            <loader/>
-        </div>
+        <transaction-container/>
     </section>
 </template>
     
 <script>
 
-import loader from './components/loader.vue';
-import transaction from './components/transaction.vue';
 import sidebar from './components/sidebar.vue';
 import card from './components/card.vue';
+import transactionContainer from './components/transactionContainer.vue';
 
 export default {
     name: 'App',
@@ -28,10 +20,9 @@ export default {
         }
     },
     components: {
-        loader,
-        transaction,
         sidebar,
-        card
+        card,
+        transactionContainer
     },
     methods: {
         async getTransactionDetails(transactionId) {
@@ -41,12 +32,6 @@ export default {
                 .then(data => console.log(data))
                 .catch(err => console.log(err.message))
         }
-    },
-    mounted() {
-        fetch('http://localhost:3000/transactions/')
-            .then(res => res.json())
-            .then(data => this.transactions = data)
-            .catch(err => console.log(err.message))
     }
 }
 </script>
