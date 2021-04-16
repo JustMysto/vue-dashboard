@@ -56,7 +56,6 @@ export default {
         display: grid;
         grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 0.2fr;
         cursor: pointer;
-        box-shadow: 0px 5px 15px -15px black;
         animation: fadeIn .2s ease-out;
         transition: background-color .2s;
     }

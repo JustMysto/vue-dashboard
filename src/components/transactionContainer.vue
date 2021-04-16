@@ -1,7 +1,7 @@
 <template>
     <div class="transactionContainer">
         <div class="filterBar">
-            <input type="text" id="search" placeholder="search by name">
+            <input v-on:keyup="search()" type="text" id="search" placeholder="search by name">
         </div>
         <template v-if="transactions.length">
             <template v-for="transaction in transactions" :key="transaction.id">
@@ -30,6 +30,18 @@ export default {
         loader,
         transaction
     },
+    methods: {
+        search() {
+            const searchVal = document.getElementById('search').value.toLowerCase();
+            if (searchVal == "") return;
+
+            const filteredTransactions = this.transactions.filter(transaction => {
+                return transaction.person.name.toLowerCase().includes(searchVal)
+            })
+
+            console.log(filteredTransactions)
+        }
+    },
     mounted() {
         fetch('http://localhost:3000/transactions/')
             .then(res => res.json())
@@ -42,13 +54,13 @@ export default {
 <style scoped>
     .transactionContainer {
         grid-column: span 9;
+        border-radius: 2rem;
+        background-color: white;
+        padding-bottom: 2rem;
     }
 
     .filterBar {
         padding: 2rem 5rem 2rem 5rem;
-        background-color: white;
-        border-top-left-radius: 2rem;
-        border-top-right-radius: 2rem;
         border-bottom: 5px solid var(--purple);
     }
 
