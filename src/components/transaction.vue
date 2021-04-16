@@ -52,7 +52,6 @@ export default {
         justify-content: space-between;
         align-items: center;
         background-color: white;
-        border-radius: 1rem;
         padding: 1rem;
         display: grid;
         grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 0.2fr;
