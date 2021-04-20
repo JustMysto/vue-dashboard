@@ -30,18 +30,19 @@
 <script>
 
 export default {
-    props: [
-        'person',
-        'projects',
-        'finished',
-        'profit',
-        'followers'
-    ],
-    methods: {
-        getImgUrl(pic) {
-            return require('../assets/icons/Elements/User/'+pic)
-        }
+  name: 'transaction',
+  props: [
+    'person',
+    'projects',
+    'finished',
+    'profit',
+    'followers'
+  ],
+  methods: {
+    getImgUrl(pic) {
+      return require('../assets/icons/Elements/User/'+pic)
     }
+  }
 }
 
 </script>
@@ -87,12 +88,12 @@ export default {
     }
 
     @keyframes fadeIn {
-        0% { transform: scale(0) };
-        100% { transform: scale(1) };
+        0% { transform: scale(0) }
+        100% { transform: scale(1) }
     }
 
     @keyframes hover {
         0% { transform: rotate(0deg) ;}
-        100% { transform: rotate(360deg) ;} 
+        100% { transform: rotate(360deg) ;}
     }
 </style>

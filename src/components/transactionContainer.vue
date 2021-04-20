@@ -20,34 +20,34 @@ import loader from './loader.vue';
 import transaction from './transaction.vue';
 
 export default {
-
-    data() {
-        return {
-            transactions: []
-        }
-    },
-    components: {
-        loader,
-        transaction
-    },
-    methods: {
-        search() {
-            const searchVal = document.getElementById('search').value.toLowerCase();
-            if (searchVal == "") return;
-
-            const filteredTransactions = this.transactions.filter(transaction => {
-                return transaction.person.name.toLowerCase().includes(searchVal)
-            })
-
-            console.log(filteredTransactions)
-        }
-    },
-    mounted() {
-        fetch('http://localhost:3000/transactions/')
-            .then(res => res.json())
-            .then(data => this.transactions = data)
-            .catch(err => console.log(err.message))
+  name: 'transactionContainer',
+  data() {
+    return {
+      transactions: []
     }
+  },
+  components: {
+    loader,
+    transaction
+  },
+  methods: {
+    search() {
+      const searchVal = document.getElementById('search').value.toLowerCase();
+        if (searchVal == "") return;
+
+      const filteredTransactions = this.transactions.filter(transaction => {
+          return transaction.person.name.toLowerCase().includes(searchVal)
+      })
+
+      console.log(filteredTransactions)
+    }
+  },
+  mounted() {
+    fetch('http://localhost:3000/transactions/')
+      .then(res => res.json())
+      .then(data => this.transactions = data)
+      .catch(err => console.log(err.message))
+  }
 }
 </script>
 
