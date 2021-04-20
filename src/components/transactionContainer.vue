@@ -4,6 +4,7 @@
       <input v-on:keyup="search()" type="text" id="search" placeholder="search by name">
       <p>{{transactions.length}} Results found</p>
     </div>
+    
     <template v-if="transactions.length">
       <template v-for="transaction in transactions" :key="transaction.id">
         <transaction v-on:click="getTransactionDetails(transaction.id)" :person="transaction.person"
